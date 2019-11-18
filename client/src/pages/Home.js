@@ -47,8 +47,9 @@ class Home extends Component {
                     <Wine
                       key={wine._id}
                       grape={wine.grape}
+                      wineType={wine.wineType}
                       price={wine.price}
-                      name={wine.link}
+                      name={wine.name}
                       year={wine.year}
                       origin={wine.origin}
                       tastingNotes={wine.tastingNotes}

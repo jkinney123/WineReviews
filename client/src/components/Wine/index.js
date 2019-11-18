@@ -3,12 +3,25 @@ import { ListItem } from "../List";
 import { Row, Col } from "../Grid";
 import "./style.css";
 
-function Wine({ grape, price, name, year, origin, tastingNotes, grade, feel }) {
+function Wine({
+  grape,
+  wineType,
+  price,
+  name,
+  year,
+  origin,
+  tastingNotes,
+  grade,
+  feel
+}) {
   return (
     <ListItem>
       <Row className="flex-wrap-reverse">
         <Col size="md-8">
           <h3 className="font-italic">{grape}</h3>
+        </Col>
+        <Col size="md-8">
+          <h3 className="font-italic">{wineType}</h3>
         </Col>
         <Col size="md-8">
           <h3 className="font-italic">{price}</h3>

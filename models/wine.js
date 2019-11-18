@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const wineSchema = new Schema({
   grape: { type: String },
+  wineType: { type: String },
   price: { type: String },
   name: { type: String },
   year: { type: String },
@@ -10,7 +11,7 @@ const wineSchema = new Schema({
   tastingNotes: { type: String },
   grade: { type: String },
   feel: { type: String },
-  _id: { type: String, unique: true }
+  _id: { type: Schema.Types.ObjectId }
 });
 
 const wine = mongoose.model("wine", wineSchema);
