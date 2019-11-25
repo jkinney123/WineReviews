@@ -2,6 +2,22 @@
   float: right;
 }
 
+.card-Style {
+  background: white;
+  border-radius: 4px;
+  position: relative;
+  margin: 100px 20px;
+  padding: 10px 10px 10px 10px;
+  box-shadow: 0 3px 6px rgb(230, 120, 120), 0 3px 6px rgb(230, 120, 120);
+  height: 300px;
+  width: 200px;
+}
+
+.card-img-top {
+  height: 100%;
+  width: 100%;
+}
+
 @media (max-width: 767px) {
   .btn-container {
     margin-bottom: 15px;

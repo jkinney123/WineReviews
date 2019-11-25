@@ -3,49 +3,51 @@ import Jumbotron from "../components/Jumbotron";
 import Card from "../components/Card";
 import Wine from "../components/Wine";
 import Footer from "../components/Footer";
-import API from "../utils/API";
-import { Col, Row, Container } from "../components/Grid";
-import { List } from "../components/List";
+import wines from "../reviews.json";
+// import API from "../utils/API";
+// import { Col, Row, Container } from "../components/Grid";
+// import { List } from "../components/List";
 
 class Home extends Component {
   state = {
-    wines: []
+    wines
   };
 
-  componentDidMount() {
-    this.getSavedWines();
-  }
+  // componentDidMount() {
+  //   this.getSavedWines();
+  // }
 
-  getSavedWines = () => {
-    API.getSavedWines()
-      .then(res =>
-        this.setState({
-          wines: res.data
-        })
-      )
-      .catch(err => console.log(err));
-  };
+  // getSavedWines = () => {
+  //   API.getSavedWines()
+  //     .then(res =>
+  //       this.setState({
+  //         wines: res.data
+  //       })
+  //     )
+  //     .catch(err => console.log(err));
+  // };
 
   render() {
     return (
-      <Container>
-        <Row>
-          <Col size="md-12">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
             <Jumbotron>
               <h1 className="text-center">
                 <strong>Wine reviews</strong>
               </h1>
             </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-12">
-            <Card title="Saved Wines" icon="download">
-              {this.state.wines.length ? (
-                <List>
-                  {this.state.wines.map(wine => (
+          </div>
+        </div>
+        <div className="container">
+          <Card title="Wines">
+            {/* <List> */}
+            <div className="row">
+              <div className="d-inline-flex  flex-wrap flex-fill">
+                {this.state.wines.map(wine => (
+                  <div className="col-md-3">
                     <Wine
-                      key={wine._id}
+                      key={wine.id}
                       grape={wine.grape}
                       wineType={wine.wineType}
                       price={wine.price}
@@ -55,18 +57,20 @@ class Home extends Component {
                       tastingNotes={wine.tastingNotes}
                       grade={wine.grade}
                       feel={wine.feel}
-                      // image={wine.image}
+                      image={wine.image}
                     />
-                  ))}
-                </List>
-              ) : (
-                <h2 className="text-center">No Saved Wines</h2>
-              )}
-            </Card>
-          </Col>
-        </Row>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* </List> */}
+          </Card>
+          {/* </Col> */}
+        </div>
+
         <Footer />
-      </Container>
+      </div>
     );
   }
 }

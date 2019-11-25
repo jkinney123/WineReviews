@@ -1,76 +1,55 @@
 import React from "react";
 import { ListItem } from "../List";
-import { Row, Col } from "../Grid";
+// import { Row, Col } from "../Grid";
 import "./style.css";
 
-function Wine({
-  grape,
-  wineType,
-  price,
-  name,
-  year,
-  origin,
-  tastingNotes,
-  grade,
-  feel
-}) {
-  return (
-    <ListItem>
-      <Row className="flex-wrap-reverse">
-        <Col size="md-8">
-          <h3 className="font-italic">{grape}</h3>
-        </Col>
-        <Col size="md-8">
-          <h3 className="font-italic">{wineType}</h3>
-        </Col>
-        <Col size="md-8">
-          <h3 className="font-italic">{price}</h3>
-        </Col>
-        <Col size="md-8">
-          <h3 className="font-italic">{name}</h3>
-        </Col>
-        <Col size="md-8">
-          <h3 className="font-italic">{year}</h3>
-        </Col>
-        <Col size="md-8">
-          <h3 className="font-italic">{origin}</h3>
-        </Col>
-        <Col size="md-8">
-          <h3 className="font-italic">{tastingNotes}</h3>
-        </Col>
-        {/* <Col size="md-4">
-          <div className="btn-container">
-            <a
-              className="btn btn-light"
-              target="_blank"
-              rel="noopener noreferrer"
-              href={link}
-            >
-              View
-            </a>
-            <Button />
+const Wine = props => (
+  <div className="card-Style">
+    <img className="card-img-top" src={props.image} alt="Wine" />
+    <div className="card-body">
+      <h4 className="card-title">{props.name}</h4>
+      <p className="card-text">
+        {props.grape} {props.year}>
+      </p>
+
+      <button
+        type="button"
+        className="btn btn-info btn-lg"
+        data-toggle="modal"
+        data-target="#myModal"
+      >
+        See Full Review
+      </button>
+    </div>
+  </div>
+);
+{
+  /* <div className="modal fade" id="myModal" role="dialog">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <button type="button" className="close" data-dismiss="modal">
+                &times;
+              </button>
+              <h4 className="modal-title"></h4>
+            </div>
+            <ListItem>
+              <div className="modal-body">
+                <p>Some text in the modal.</p>
+              </div>
+            </ListItem>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-default"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
           </div>
-        </Col> */}
-      </Row>
-      <Row>
-        <Col size="md-6">
-          <p className="font-italic small"> {grade}</p>
-        </Col>
-      </Row>
-      <Row>
-        {/* <Col size="12 sm-4 md-2">
-          <img
-            className="img-thumbnail img-fluid w-100"
-            src={image}
-            alt={title}
-          />
-        </Col> */}
-        <Col size="12 sm-8 md-10">
-          <p>{feel}</p>
-        </Col>
-      </Row>
-    </ListItem>
-  );
+        </div>
+      </div> */
 }
 
 export default Wine;
