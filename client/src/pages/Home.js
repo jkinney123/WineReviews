@@ -4,6 +4,7 @@ import Card from "../components/Card";
 import Wine from "../components/Wine";
 import Footer from "../components/Footer";
 import wines from "../reviews.json";
+
 // import API from "../utils/API";
 // import { Col, Row, Container } from "../components/Grid";
 // import { List } from "../components/List";
@@ -12,6 +13,32 @@ class Home extends Component {
   state = {
     wines
   };
+
+  // openModal = () => {
+  //   this.setState({
+  //     modalIsOpen: true
+  //   });
+  // };
+
+  // closeModal = () => {
+  //   this.setState({
+  //     modalIsOpen: false
+  //   });
+  // };
+
+  // wineClick = id => {
+  //   const wines = this.state.wines;
+
+  //   const clickedWine = wines.filter(wine => wine.id === id);
+
+  //   if (clickedWine[0].clicked) {
+  //     for (let i = 0; i < wines.length; i++) {
+  //       wines[i].clicked = false;
+  //     }
+
+  //     this.setState({ wines });
+  //   }
+  // };
 
   // componentDidMount() {
   //   this.getSavedWines();
@@ -48,6 +75,8 @@ class Home extends Component {
                   <div className="col-md-3">
                     <Wine
                       key={wine.id}
+                      // wineClick={this.wineClick}
+                      // id={wine.id}
                       grape={wine.grape}
                       wineType={wine.wineType}
                       price={wine.price}
