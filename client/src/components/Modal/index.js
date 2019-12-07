@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal, Button, ButtonToolbar } from "react-bootstrap";
+import "./style.css";
 
 class WineModal extends React.Component {
   state = {
@@ -11,7 +12,7 @@ class WineModal extends React.Component {
       <div>
         <ButtonToolbar>
           <Button onClick={() => this.setState({ lgShow: true })}>
-            Large modal
+            See Full Review
           </Button>
           <Modal
             size="lg"
@@ -21,10 +22,62 @@ class WineModal extends React.Component {
           >
             <Modal.Header closeButton>
               <Modal.Title id="example-modal-sizes-title-lg">
-                Large Modal
+                <h4>{this.props.grape}</h4>
               </Modal.Title>
             </Modal.Header>
-            <Modal.Body>...</Modal.Body>
+            <Modal.Body>
+              <img
+                className="img-fluid float-left"
+                src={this.props.image}
+                alt="Wine"
+              />
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-4">
+                    grape: <h5> {this.props.grape} </h5>
+                  </div>
+                  <div className="col-md-4">
+                    price: <h5> {this.props.price} </h5>
+                  </div>
+                  <div className="col-md-4">
+                    year: <h5> {this.props.year} </h5>
+                  </div>
+                  <div className="row">
+                    <div className="col-md-6">
+                      <p className="m-2">
+                        <h5>
+                          <small>origin: </small> {this.props.origin}
+                        </h5>
+                      </p>
+                    </div>
+
+                    <div className="col-md-6">
+                      <p className="m-2">
+                        <h6>
+                          <small>wineType: </small> {this.props.wineType}
+                        </h6>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-md-12 m-2">
+                      <h6>Tasting Notes: </h6>
+                      <p className="m-2 ">
+                        {this.props.tastingNotes}
+                        <br />
+                        grade: {this.props.grade}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-md-12 m-2">
+                      <h6>Feel: </h6>
+                      <p className="m-2 ">{this.props.feel}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Modal.Body>
           </Modal>
         </ButtonToolbar>
       </div>

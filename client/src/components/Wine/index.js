@@ -12,10 +12,27 @@ const Wine = props => (
     <div className="card-body">
       <h4 className="card-title">{props.name}</h4>
       <p className="card-text">
-        {props.grape} {props.year}>
+        <h5> grape: {props.grape}</h5>
+        <h5> year: {props.year}</h5>
+        <h5> origin: {props.origin}</h5>
+        <h5> price: {props.price}</h5>
       </p>
-      <br />
-      <WineModal />
+
+      <WineModal
+        key={props.id}
+        // wineClick={this.wineClick}
+        id={props.id}
+        grape={props.grape}
+        wineType={props.wineType}
+        price={props.price}
+        name={props.name}
+        year={props.year}
+        origin={props.origin}
+        tastingNotes={props.tastingNotes}
+        grade={props.grade}
+        feel={props.feel}
+        image={props.image}
+      />
     </div>
   </div>
 );

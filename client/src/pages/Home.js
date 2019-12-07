@@ -4,6 +4,7 @@ import Card from "../components/Card";
 import Wine from "../components/Wine";
 import Footer from "../components/Footer";
 import wines from "../reviews.json";
+import WineModal from "../components/Modal";
 
 // import API from "../utils/API";
 // import { Col, Row, Container } from "../components/Grid";
