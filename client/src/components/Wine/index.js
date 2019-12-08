@@ -12,10 +12,21 @@ const Wine = props => (
     <div className="card-body">
       <h4 className="card-title">{props.name}</h4>
       <p className="card-text">
-        <h5> grape: {props.grape}</h5>
-        <h5> year: {props.year}</h5>
-        <h5> origin: {props.origin}</h5>
-        <h5> price: {props.price}</h5>
+        <h5>
+          {" "}
+          <small>grape:</small> {props.grape}
+        </h5>
+        <h5>
+          {" "}
+          <small>year:</small> {props.year}
+        </h5>
+        <h5>
+          {" "}
+          <small>origin:</small> {props.origin}
+        </h5>
+        <h5>
+          <small> price:</small> {props.price}
+        </h5>
       </p>
 
       <WineModal

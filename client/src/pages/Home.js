@@ -5,6 +5,8 @@ import Wine from "../components/Wine";
 import Footer from "../components/Footer";
 import wines from "../reviews.json";
 import WineModal from "../components/Modal";
+import { Link } from "react-router-dom";
+import "./style.css";
 
 // import API from "../utils/API";
 // import { Col, Row, Container } from "../components/Grid";
@@ -61,14 +63,37 @@ class Home extends Component {
         <div className="row">
           <div className="col-md-12">
             <Jumbotron>
-              <h1 className="text-center">
-                <strong>Wine reviews</strong>
-              </h1>
+              <div className="row">
+                <div className="col-md-12">
+                  <h1 className="text-center scale-in-top">
+                    <strong> $10 Wine reviews</strong>
+                  </h1>
+                </div>
+              </div>
+              <br />
+              <br />
+              <div className="row">
+                <div className="col-md-6">
+                  <h4 className="text-center border border-dark slide-in-left">
+                    {" "}
+                    <Link className="Pinot" to="/Pinot">
+                      What is Pinot Noir?
+                    </Link>
+                  </h4>
+                </div>
+                <div className="col-md-6">
+                  <h4 className="text-center border border-dark slide-in-right">
+                    <Link className="Cab" to="/Cabernet">
+                      What is Cabernet Sauvignon?
+                    </Link>{" "}
+                  </h4>
+                </div>
+              </div>
             </Jumbotron>
           </div>
         </div>
         <div className="container">
-          <Card title="Wines">
+          <Card title="Reviews">
             {/* <List> */}
             <div className="row">
               <div className="d-inline-flex  flex-wrap flex-fill">

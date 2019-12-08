@@ -11,20 +11,19 @@ class WineModal extends React.Component {
     return (
       <div>
         <ButtonToolbar>
-          <Button onClick={() => this.setState({ lgShow: true })}>
+          <button
+            onClick={() => this.setState({ lgShow: true })}
+            type="button"
+            class="btn btn-dark"
+          >
             See Full Review
-          </Button>
+          </button>
           <Modal
             size="lg"
             show={this.state.lgShow}
             onHide={() => this.setState({ lgShow: false })}
             aria-labelledby="example-modal-sizes-title-lg"
           >
-            <Modal.Header closeButton>
-              <Modal.Title id="example-modal-sizes-title-lg">
-                <h4>{this.props.grape}</h4>
-              </Modal.Title>
-            </Modal.Header>
             <Modal.Body>
               <img
                 className="img-fluid float-left"
@@ -54,7 +53,7 @@ class WineModal extends React.Component {
                     <div className="col-md-6">
                       <p className="m-2">
                         <h6>
-                          <small>wineType: </small> {this.props.wineType}
+                          <small>Wine Type: </small> {this.props.wineType}
                         </h6>
                       </p>
                     </div>

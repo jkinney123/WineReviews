@@ -32,8 +32,8 @@ class Nav extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light mb-2">
-        <Link className="navbar-brand" to="/">
+      <nav className="navbar navbar-expand-lg  bg-dark mb-2 p-3">
+        <Link className="navbar-brand text-white" to="/">
           $10 Wine Reviews
         </Link>
         <button
@@ -57,23 +57,27 @@ class Nav extends Component {
                 onClick={this.toggleNav}
                 className={
                   window.location.pathname === "/"
-                    ? "nav-link active"
-                    : "nav-link"
+                    ? "nav-link active text-white"
+                    : "nav-link text-white"
                 }
                 to="/"
               >
                 Home
               </Link>
             </li>
-            {/* <li className="nav-item">
+            <li className="nav-item">
               <Link
                 onClick={this.toggleNav}
-                className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
-                to="/saved"
+                className={
+                  window.location.pathname === "/about"
+                    ? "nav-link active text-white"
+                    : "nav-link text-white"
+                }
+                to="/about"
               >
-                Saved
+                About Me
               </Link>
-            </li> */}
+            </li>
           </ul>
         </div>
       </nav>
