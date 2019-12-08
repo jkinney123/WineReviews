@@ -2,7 +2,6 @@
   "name": "react-google-books",
   "version": "0.1.0",
   "homepage": "http://jkinney123.github.io/WineReviews/",
-  "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "gh-pages": "2.1.1",
